@@ -6,7 +6,6 @@ public class Book {
 	this();*/
 	
 	public Book() {
-		super();
 		System.out.println("Default Constructor");
 	}
 	
