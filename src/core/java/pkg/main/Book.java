@@ -24,7 +24,7 @@ public class Book {
 	
 	
 	private int price;
-	protected String bookName;
+	String bookName;
 	
 	public int getPrice() {
 		return price;

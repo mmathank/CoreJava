@@ -10,6 +10,8 @@ public class NewBookStore extends Book {
 		tamilBook.setBookName("Tamil Book");
 		System.out.println(tamilBook.getBookName());
 		
+//		System.out.println(tamilBook.bookName);
+		
 		System.out.println(tamilBook);
 
 	}

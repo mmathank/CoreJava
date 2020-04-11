@@ -63,6 +63,9 @@ public class Car extends Vehicle {
 		System.out.println(car5.welcomeMsg());
 		System.out.println(car5.welcomeMsg("Mathan"));
 		System.out.println(car5.welcomeMsg("Mathan", "Madurai"));
+		
+		Car car6 = new Car();
+		System.out.println(car6.showPrice());
 	}
 
 }

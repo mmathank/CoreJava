@@ -2,7 +2,7 @@ package core.java.inheritance.concepts;
 
 public class Vehicle {
 
-	int price = 0;
+	static int price = 0;
 	int speed = 0;
 	static String name = "I'm a vehicle";
 
