@@ -39,6 +39,9 @@ public class ArrayExample {
 		}
 
 		System.out.println();*/
+		
+		int[] rollnums = new int[100];
+//		0 to 99
 
 	}
 

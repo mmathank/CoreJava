@@ -46,4 +46,5 @@ public class Book {
 	public String toString() {
 		return "Book [price=" + price + ", bookName=" + bookName + "]";
 	}
+
 }
