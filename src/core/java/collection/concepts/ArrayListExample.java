@@ -5,7 +5,7 @@ import java.util.List;
 
 public class ArrayListExample {
 	
-	static List<Integer> numberList = new ArrayList<>(2);
+	static List<Integer> numberList = new ArrayList<>();
 
 	public static void main(String[] args) {
 
@@ -13,7 +13,6 @@ public class ArrayListExample {
 		numberList.add(0,10);
 		numberList.add(2,20);
 		numberList.add(3,20);
-		
 		
 //		numberList.remove(10);
 //		numberList.remove((Object) 10);

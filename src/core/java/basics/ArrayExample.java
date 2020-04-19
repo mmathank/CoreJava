@@ -28,7 +28,7 @@ public class ArrayExample {
 		System.out.println("Using toString() method from Arrays class");
 		System.out.println("arrOfNum3: " + Arrays.toString(arrOfNum3));
 
-		/*int[][] twoDimArr = { { 1, 2, 3, 4, 5, 6 }, { 1, 1, 1, 1, 1, 1 }, { 0, 1, 2, 3, 4, 5 }, { 1, 2, 3, 4, 5, 6 },
+		int[][] twoDimArr = { { 1, 2, 3, 4, 5, 6 }, { 1, 1, 1, 1, 1, 1 }, { 0, 1, 2, 3, 4, 5 }, { 1, 2, 3, 4, 5, 6 },
 				{ 1, 1, 1, 1, 1, 1 }, { 5, 4, 3, 2, 1, 0 } };
 
 		for (int[] arr : twoDimArr) {
@@ -38,10 +38,9 @@ public class ArrayExample {
 			}
 		}
 
-		System.out.println();*/
+		System.out.println();
 		
-		int[] rollnums = new int[100];
-//		0 to 99
+
 
 	}
 
