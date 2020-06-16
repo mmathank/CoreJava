@@ -11,5 +11,8 @@ public class ArraySortComparator {
 		// using comparator
 		Arrays.sort(fruits, String.CASE_INSENSITIVE_ORDER);
 		System.out.println(Arrays.toString(fruits));
+		
+/*		Arrays.sort(fruits);
+		System.out.println(Arrays.toString(fruits));*/
 	}
 }

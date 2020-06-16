@@ -16,7 +16,7 @@ public class AnonymousClassExample {
 			}
 		}
 		
-//		Bike bike = new Bike();
+//		class Bike implements Vehicle
 		Vehicle bike = new Vehicle() {
 
 			@Override
@@ -27,6 +27,7 @@ public class AnonymousClassExample {
 		};
 		
 		Car car = new Car();
+//		Bike bike = new Bike();
 		System.out.println(car.showVehicleType());
 		System.out.println(bike.showVehicleType());
 	}

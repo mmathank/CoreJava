@@ -9,7 +9,8 @@ import java.util.Set;
 public class CollectionSortExample {
 
 	static Set<Integer> numSet = new HashSet<>();
-
+	static List<Integer> tempList = new ArrayList<>();
+	
 	public static void populateSet() {
 
 		while (numSet.size() <= 10) {
@@ -21,7 +22,19 @@ public class CollectionSortExample {
 		System.out.println(numList);
 	}
 
+	public static void populateSet2() {
+
+		while (tempList.size() <= 10) {
+			tempList.add((int) (Math.random() * 100));
+		}
+
+		Collections.sort(tempList);
+		System.out.println(tempList);
+	}
+	
 	public static void main(String[] args) {
-		populateSet();
+//		populateSet();
+		populateSet2();
+		System.out.println(Math.random() * 100);
 	}
 }

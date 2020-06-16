@@ -36,12 +36,20 @@ public class ArrayExample {
 			for (int num : arr) {
 				System.out.print(num + " ");
 			}
+			System.out.println();
 		}
 
+		System.out.println("+++++++++++++++++++++++++++++++++++++++++");
+		for (int i = 0; i < twoDimArr.length; i++) {
+			System.out.println();
+			for (int j = 0; j < twoDimArr[i].length; j++) {
+				System.out.print(twoDimArr[i][j] + " ");
+			}
+			System.out.println();
+		}
+		
 		System.out.println();
 		
-
-
 	}
 
 }

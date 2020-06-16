@@ -4,13 +4,11 @@ class PrintNumbers implements Runnable {
 
 	public void run() {
 		for (int i = 0; i < 10; i++) {
-
 			try {
 				Thread.sleep(1000);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
-			
 			System.out.println(i);
 		}
 	}
@@ -25,8 +23,8 @@ public class ThreadExample1 {
 		thread1.start();
 
 		new Thread(new PrintNumbers()).start();
-		
-		/*new Thread(new Runnable() {
+
+		Thread thread3 = new Thread(new Runnable() {
 
 			@Override
 			public void run() {
@@ -42,7 +40,7 @@ public class ThreadExample1 {
 				}
 			}
 
-		}).start();*/
+		});
+		thread3.start();
 	}
-
 }

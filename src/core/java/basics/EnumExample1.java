@@ -13,6 +13,8 @@ public class EnumExample1 {
 		System.out.println(c2);
 		System.out.println(c3.ordinal());
 		
+		for(Company x : Company.values())	
+			System.out.println(x);
 
 		for (Company c : Company.values()) {
 			if (c == Company.FORD)

@@ -39,5 +39,18 @@ public class StreamMapExample {
 				.distinct()
 				.count();
 		System.out.println("totalActivities: " + totalActivities);
+		
+		System.out.println("-------------------------------");
+		System.out.println("Terminal Operation Mapping() example");
+		List<String> namesList2 = studentList.stream()
+				.collect(Collectors.mapping(Student::getName, Collectors.toList()));
+		namesList2.forEach(System.out::println);
+		
+		System.out.println("-------------------------------");
+		System.out.println("Terminal Operation Joining() example");
+		String names = studentList.stream()
+				.map(Student::getName)
+				.collect(Collectors.joining("-"));
+		System.out.println(names);
 	}
 }

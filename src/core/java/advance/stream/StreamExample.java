@@ -3,7 +3,7 @@ package core.java.advance.stream;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Predicate;
-import java.util.stream.Collectors;
+import static java.util.stream.Collectors.*;
 
 public class StreamExample {
 
@@ -16,7 +16,7 @@ public class StreamExample {
 
 		Map<String, List<String>> studentMap = StudentDB.getStudentList().stream()
 				.filter(byIdAndSports)
-				.collect(Collectors.toMap(Student::getName, Student::getActivities));
+				.collect(toMap(Student::getName, Student::getActivities));
 
 		studentMap.forEach((name, activity) -> System.out.println("Name: " + name + ", Activity: " + activity));
 
@@ -28,7 +28,7 @@ public class StreamExample {
 				.peek(student -> System.out.println("After 1st Filter: " + student))
 				.filter(byIdAndSports)
 				.peek(student -> System.out.println("After 2nd Filter: " + student))
-				.collect(Collectors.toMap(Student::getName, Student::getActivities));
+				.collect(toMap(Student::getName, Student::getActivities));
 		
 		studentMap2.forEach((name, activity) -> System.out.println("Name: " + name + ", Activity: " + activity));
 	}

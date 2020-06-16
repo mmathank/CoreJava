@@ -5,12 +5,11 @@ class PrintNumber extends Thread {
 	public void run() {
 		for (int i = 0; i < 10; i++) {
 
-			try {
+		try {
 				sleep(1000);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
-			
 			System.out.println(i);
 		}
 	}

@@ -33,8 +33,8 @@ public class ComparableStudent implements Comparable<ComparableStudent> {
 
 	@Override
 	public int compareTo(ComparableStudent o) {
-//		return this.id - o.id;
-		return this.name.compareTo(o.name);
+		return this.id - o.id;
+//		return this.name.compareTo(o.name);
 	}
 	
 	@Override
@@ -54,6 +54,9 @@ public class ComparableStudent implements Comparable<ComparableStudent> {
 		studentList.add(s3);
 		
 		Collections.sort(studentList);
-		studentList.forEach(System.out::println);
+		
+		for (ComparableStudent s : studentList)
+			System.out.println(s);
+//		studentList.forEach(System.out::println);
 	}
 }
