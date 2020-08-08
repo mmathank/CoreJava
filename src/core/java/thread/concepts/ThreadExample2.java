@@ -21,9 +21,12 @@ public class ThreadExample2 {
 
 		PrintNumber thread1 = new PrintNumber();
 		thread1.start();
+		System.out.println(thread1.getName());
 
 		PrintNumber thread2 = new PrintNumber();
 		thread2.start();
+		thread2.setName("MyThread");
+		System.out.println(thread2.getName());
 	}
 
 }

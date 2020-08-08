@@ -1,37 +1,28 @@
 package core.java.thread.concepts;
 
-/*class OddNumbers implements Runnable {
+public class PrintOddEvenNumbers {
 
-	@Override
-	public void run() {
+	public static void printOddNumbers() {
 		for (int i = 1; i <= 10; i++) {
-			if (i % 2 != 0) {
+			if (i % 2 != 0)
 				System.out.println(i);
-			}
 			try {
-				Thread.sleep(300);
+				Thread.sleep(500);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
 		}
 	}
-}*/
-
-public class PrintOddEvenNumbers {
-
-	public static void printOddNumbers() {
-		System.out.println("Method Printing Odd numbers");
-		for (int i = 1; i <= 10; i++) {
-			if (i % 2 != 0)
-				System.out.println(i);
-		}
-	}
 
 	public static void printEvenNumbers() {
-		System.out.println("Method Printing Even numbers");
 		for (int i = 1; i <= 10; i++) {
 			if (i % 2 == 0)
 				System.out.println(i);
+			try {
+				Thread.sleep(500);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
 		}
 	}
 
@@ -42,32 +33,14 @@ public class PrintOddEvenNumbers {
 		Thread t1 = new Thread(new Runnable() {
 			@Override
 			public void run() {
-				for (int i = 1; i <= 10; i++) {
-					if (i % 2 != 0) {
-						System.out.println(i);
-					}
-					try {
-						Thread.sleep(1000);
-					} catch (InterruptedException e) {
-						e.printStackTrace();
-					}
-				}
+				printOddNumbers();
 			}
 		});
 
 		Thread t2 = new Thread(new Runnable() {
 			@Override
 			public void run() {
-				for (int i = 1; i <= 10; i++) {
-					if (i % 2 == 0) {
-						System.out.println(i);
-					}
-					try {
-						Thread.sleep(1000);
-					} catch (InterruptedException e) {
-						e.printStackTrace();
-					}
-				}
+				printEvenNumbers();
 			}
 		});
 
@@ -80,8 +53,6 @@ public class PrintOddEvenNumbers {
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-		printOddNumbers();
-		printEvenNumbers();
 		System.out.println("Main Thread Completed..");
 	}
 }

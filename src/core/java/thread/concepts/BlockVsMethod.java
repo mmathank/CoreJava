@@ -9,21 +9,30 @@ public class BlockVsMethod {
 	Object lock2 = new Object();
 
 	public void methodA() {
+		System.out.println("Instructions from Method A");
+		System.out.println("Starting.. Method A..");
+		System.out.println("Processing.. Method A..");
+		System.out.println("Completing.. Method A..");
+		
 		synchronized (lock1) {
 			for (int i = 0; i < 10; i++) {
 				counterForA++;
-				System.out.println(counterForA);
+				System.out.println("Method A: " + counterForA);
 			}
 			System.out.println("counterForA: " + counterForA);
 		}
 	}
 
 	public void methodB() {
+		System.out.println("Instructions from Method B");
+		System.out.println("Starting.. Method B..");
+		System.out.println("Processing.. Method B..");
+		System.out.println("Completing.. Method B..");
 
 		synchronized (lock2) {
 			for (int i = 0; i < 10; i++) {
 				counterForB++;
-				System.out.println(counterForB);
+				System.out.println("Method B: " + counterForB);
 			}
 			System.out.println("counterForB: " + counterForB);
 		}
@@ -31,20 +40,30 @@ public class BlockVsMethod {
 	}
 
 	public synchronized void methodC() {
+		
+		System.out.println("Instructions from Method C");
+		System.out.println("Starting.. Method C..");
+		System.out.println("Processing.. Method C..");
+		System.out.println("Completing.. Method C..");
+		
 		for (int i = 0; i < 10; i++) {
 			counterForA++;
-			System.out.println(counterForA);
+			System.out.println("Method C: " + counterForA);
 		}
-		System.out.println("counterForA: " + counterForA);
+		System.out.println("counterForC: " + counterForA);
 	}
 
 	public synchronized void methodD() {
+		System.out.println("Instructions from Method D");
+		System.out.println("Starting.. Method D..");
+		System.out.println("Processing.. Method D..");
+		System.out.println("Completing.. Method D..");
 
 		for (int i = 0; i < 10; i++) {
 			counterForB++;
-			System.out.println(counterForB);
+			System.out.println("Method D: " + counterForB);
 		}
-		System.out.println("counterForB: " + counterForB);
+		System.out.println("counterForD: " + counterForB);
 
 	}
 
@@ -56,7 +75,6 @@ public class BlockVsMethod {
 			@Override
 			public void run() {
 				bvm.methodA();
-//				bvm.methodC();
 			}
 		});
 
@@ -64,7 +82,20 @@ public class BlockVsMethod {
 			@Override
 			public void run() {
 				bvm.methodB();
-//				bvm.methodD();
+			}
+		});
+		
+		Thread t3 = new Thread(new Runnable() {
+			@Override
+			public void run() {
+				bvm.methodC();
+			}
+		});
+
+		Thread t4 = new Thread(new Runnable() {
+			@Override
+			public void run() {
+				bvm.methodD();
 			}
 		});
 
@@ -74,6 +105,16 @@ public class BlockVsMethod {
 		try {
 			t1.join();
 			t2.join();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		
+		t3.start();
+		t4.start();
+		
+		try {
+			t3.join();
+			t4.join();
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}

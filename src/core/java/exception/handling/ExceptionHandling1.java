@@ -20,7 +20,7 @@ public class ExceptionHandling1 {
 			System.out.println(e);
 		}
 
-		System.out.println("Enter Name");
+		System.out.println("Exception Handled.. Program completed successfully!");
 	}
 
 }
