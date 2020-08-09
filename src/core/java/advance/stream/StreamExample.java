@@ -5,20 +5,29 @@ import java.util.Map;
 import java.util.function.Predicate;
 import static java.util.stream.Collectors.*;
 
+import java.util.HashMap;
+
 public class StreamExample {
 
 	public static void main(String[] args) {
 
 
-		Predicate<Student> byId = (student -> student.getId() > 01);
-		Predicate<Student> bySports = (student -> student.getActivities().contains("Cricket"));
+		Predicate<Student> byId = (student) -> student.getId() > 01;
+		Predicate<Student> bySports = (student) -> student.getActivities().contains("Cricket");
 		Predicate<Student> byIdAndSports = byId.and(bySports);
 
 		Map<String, List<String>> studentMap = StudentDB.getStudentList().stream()
 				.filter(byIdAndSports)
 				.collect(toMap(Student::getName, Student::getActivities));
+		
+		Map<String,List<String>> studentMap3 = new HashMap<>();
+		List<Student> studentList = StudentDB.getStudentList();
+		for(Student student : studentList) {
+				studentMap3.put(student.getName(), student.getActivities());
+		}
 
 		studentMap.forEach((name, activity) -> System.out.println("Name: " + name + ", Activity: " + activity));
+		studentMap3.forEach((name, activity) -> System.out.println("Name: " + name + ", Activity: " + activity));
 
 		//Debugging Stream API
 		System.out.println("Debug: Stream API");

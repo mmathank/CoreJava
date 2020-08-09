@@ -9,7 +9,7 @@ import core.java.advance.stream.StudentDB;
 
 public class ConsumerExample {
 
-	static Consumer<Student> studentName = new Consumer<Student>() {
+	static Consumer<Student> student = new Consumer<Student>() {
 		@Override
 		public void accept(Student student) {
 			System.out.print(student.getName() + " ");
@@ -18,9 +18,11 @@ public class ConsumerExample {
 
 	static Consumer<Student> studentActivity = (activity) -> System.out.println(activity.getActivities() + " ");
 
-	static Consumer<Student> nameAndActivity = studentName.andThen(studentActivity);
+	static Consumer<Student> nameAndActivity = student.andThen(studentActivity);
 	
 	static Consumer<Integer> studentId = (id) -> System.out.println(id);
+	
+	static Consumer<String> names = (name) -> System.out.println(name);
 
 	static Consumer<Integer> power = (n) -> System.out.println(n * n);
 
@@ -36,26 +38,15 @@ public class ConsumerExample {
 	public static void main(String[] args) {
 
 		List<Student> studentList = StudentDB.getStudentList();
-		studentList.forEach(studentName);
+		studentList.forEach(System.out::println);
+		
+		studentList.forEach(student);
 		System.out.println();
 		studentList.forEach(studentActivity);
 		studentList.forEach(nameAndActivity);
 		
-		studentList.forEach((studentObject -> studentId.accept(studentObject.getId())));
-
-		System.out.println("----------------------------------------");
-
-		for (Student temp : studentList) {
-			System.out.println(temp.getName());
-		}
-
-		for (Student temp : studentList) {
-			System.out.println(temp.getActivities());
-		}
-
-		for (Student temp : studentList) {
-			System.out.println(temp.getName() + " " + temp.getActivities());
-		}
+		studentList.forEach((student -> studentId.accept(student.getId())));
+		studentList.forEach((student -> names.accept(student.getName())));
 
 		System.out.println("----------------------------------------");
 		List<Integer> numbers = Arrays.asList(10, 20, 30);

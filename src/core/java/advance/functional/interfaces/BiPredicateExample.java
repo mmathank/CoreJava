@@ -7,19 +7,19 @@ import core.java.advance.stream.Student;
 import core.java.advance.stream.StudentDB;
 
 public class BiPredicateExample {
-	
-	static BiPredicate<Integer,String> findStudent = (id, name) -> {
-		return id == 1 && name.startsWith("M");
+
+	static BiPredicate<Integer, String> findStudent = (id, name) -> {
+		return id == 01 && name.startsWith("M");
 	};
 
 	public static void main(String[] args) {
-		
-		List<Student> studentList = StudentDB.getStudentList();
-		for(Student student : studentList) {
-			if(findStudent.test(student.getId(),student.getName())) {
-				System.out.println(student.getId() + " " + student.getName());
-			}
-		}
-	}
 
+		List<Student> studentList = StudentDB.getStudentList();
+		studentList.forEach((student -> {
+			if (findStudent.test(student.getId(), student.getName())) {
+				System.out.println(student);
+			}
+		}));
+
+	}
 }

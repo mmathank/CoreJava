@@ -1,7 +1,6 @@
 package core.java.advance.functional.interfaces;
 
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.function.Predicate;
 
 import core.java.advance.stream.Student;
@@ -9,7 +8,12 @@ import core.java.advance.stream.StudentDB;
 
 public class PredicateExample {
 
-	public static Predicate<Student> idGreaterThanOne=new Predicate<Student>(){@Override public boolean test(Student student){return student.getId()>1;}};
+	public static Predicate<Student> idGreaterThanOne = new Predicate<Student>() {
+		@Override
+		public boolean test(Student student) {
+			return student.getId() > 1;
+		}
+	};
 
 	public static Predicate<Student> idGreaterThanTwo = (student) -> student.getId() > 2;
 
@@ -23,30 +27,35 @@ public class PredicateExample {
 
 		List<Student> studentList = StudentDB.getStudentList();
 
-		for (Student student : studentList) {
-			if (idGreaterThanOne.test(student)) {
-				System.out.println(student);
+		studentList.forEach((student -> {
+			if(idGreaterThanOne.test(student)) {
+				System.out.println(student.getId());
 			}
-		}
+		}));
 
-		for (Student student : studentList) {
-			if (nameStartsWith.test(student.getName())) {
+		studentList.forEach((student -> {
+			if(idGreaterThanTwo.test(student)) {
 				System.out.println(student.getName());
 			}
-		}
-
-		for (Student student : studentList) {
-			if (idGreaterThanOneAndTwo.test(student)) {
-				System.out.println(student);
+		}));
+		
+		studentList.forEach((student -> {
+			if(idGreaterThanOneAndTwo.test(student)) {
+				System.out.println(student.getId() + " " + student.getName());
 			}
-		}
-
-		for (Student student : studentList) {
-			if (activityContains.test(student.getActivities())) {
-				System.out.println("Student: " + student.getName());
+		}));
+		
+		studentList.forEach((student -> {
+			if(nameStartsWith.test(student.getName())) {
+				System.out.println("Name Starts with M: "+ student.getName());
 			}
-		}
-
+		}));
+		
+		studentList.forEach((student -> {
+			if(activityContains.test(student.getActivities())) {
+				System.out.println("Activity Contains Cricket: "+ student.getName() + " " +student.getActivities());
+			}
+		}));
 	}
 
 }
