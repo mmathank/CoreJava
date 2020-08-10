@@ -3,7 +3,7 @@ package core.java.advance.functional.interfaces;
 import java.util.Arrays;
 import java.util.function.Supplier;
 
-import core.java.advance.stream.Student;
+import core.java.advance.domain.Student;
 
 public class SupplierExample {
 	

@@ -4,6 +4,9 @@ import java.util.List;
 import java.util.Optional;
 import java.util.function.Predicate;
 
+import core.java.advance.domain.Student;
+import core.java.advance.domain.StudentDB;
+
 public class StreamReduceExample {
 
 	public static Optional<Integer> calculateTotalMarks(Predicate<Student> byId) {

@@ -4,6 +4,9 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import core.java.advance.domain.Student;
+import core.java.advance.domain.StudentDB;
+
 public class StreamComparatorExample {
 
 	//Comparator for Student class to compare it by Name

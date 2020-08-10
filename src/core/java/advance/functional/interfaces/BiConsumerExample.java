@@ -3,8 +3,8 @@ package core.java.advance.functional.interfaces;
 import java.util.List;
 import java.util.function.BiConsumer;
 
-import core.java.advance.stream.Student;
-import core.java.advance.stream.StudentDB;
+import core.java.advance.domain.Student;
+import core.java.advance.domain.StudentDB;
 
 public class BiConsumerExample {
 	

@@ -1,4 +1,4 @@
-package core.java.advance.stream;
+package core.java.advance.domain;
 
 import java.util.List;
 

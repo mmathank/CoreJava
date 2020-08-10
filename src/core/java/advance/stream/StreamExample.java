@@ -3,6 +3,10 @@ package core.java.advance.stream;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Predicate;
+
+import core.java.advance.domain.Student;
+import core.java.advance.domain.StudentDB;
+
 import static java.util.stream.Collectors.*;
 
 import java.util.HashMap;

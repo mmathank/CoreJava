@@ -4,8 +4,8 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.function.Consumer;
 
-import core.java.advance.stream.Student;
-import core.java.advance.stream.StudentDB;
+import core.java.advance.domain.Student;
+import core.java.advance.domain.StudentDB;
 
 public class ConsumerExample {
 

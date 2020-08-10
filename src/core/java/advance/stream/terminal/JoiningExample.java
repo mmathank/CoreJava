@@ -4,8 +4,8 @@ import static java.util.stream.Collectors.joining;
 
 import java.util.List;
 
-import core.java.advance.stream.Student;
-import core.java.advance.stream.StudentDB;
+import core.java.advance.domain.Student;
+import core.java.advance.domain.StudentDB;
 
 public class JoiningExample {
 
