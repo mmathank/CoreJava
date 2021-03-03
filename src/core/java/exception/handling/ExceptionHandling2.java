@@ -10,9 +10,8 @@ class InvalidAgeException extends RuntimeException {
 
 	@Override
 	public String toString() {
-		return msg;
+		return "InvalidAgeException [msg=" + msg + "]";
 	}
-	
 }
 
 public class ExceptionHandling2 {
@@ -30,7 +29,7 @@ public class ExceptionHandling2 {
 	public static void main(String[] args) {
 
 		try {
-			display(19);
+			display(10);
 		} catch (InvalidAgeException e) {
 			System.out.println(e);
 		} finally {

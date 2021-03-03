@@ -28,6 +28,7 @@ public class Person extends Object{
 		System.out.println("Inside Method" + varD);
 	}
 
+
 	public String display1() {
 		
 		return "Returning Msg";
