@@ -2,25 +2,34 @@ package core.java.basics;
 
 public class Book {
 	
-	static byte price = (byte) 140;
+	String bookName;
+	int price;
 	
-/*	static {
-		System.out.println("Inside Static Block");
+	public void showDetails(String bookName) {
+		String result = this.bookName.concat(" " + bookName);
+		System.out.println(result);
 	}
 	
-	static int a = Integer.parseInt("null");
+	public void showDetails(int price) {
+		int result = price - 10;
+		System.out.println(result);
+	}
 	
-	{
-		System.out.println("Inside Instance Block");
-	}*/
-	
-	String title;
-	String author;
-	
-	public static void main(String args[]) {
+	public void showDetails(int price, String bookName) {
 		
+		this.bookName = bookName;
+		this.price = price;
+		System.out.println(this.bookName + " " + this.price);
+	}
+	public static void main(String[] args) {
+
 		Book b1 = new Book();
-		System.out.println("Main Method");
-		System.out.println("price: " + price);
+		b1.bookName = "Test";
+		b1.price = 100;
+		
+		b1.showDetails("written by Author X");
+		b1.showDetails(110);
+		
+		b1.showDetails(500, "UpdatedBook");
 	}
 }

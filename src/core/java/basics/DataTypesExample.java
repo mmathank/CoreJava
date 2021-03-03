@@ -15,8 +15,9 @@ public class DataTypesExample {
 		double doubleVar = 11.21;
 		
 //		To store Unicode characters
-		char charVar1 = 'Y';
-		char charVar2 = 88;
+		char charVar1 = 'X';
+		char charVar2 = 89;
+		
 		
 //		Boolean Values True/False
 		boolean booleanVar1 = true;
@@ -32,6 +33,9 @@ public class DataTypesExample {
 		System.out.println("char2: " + charVar2);
 		System.out.println("booleanVar1: " + booleanVar1);
 		System.out.println("booleanVar2: " + booleanVar2);
+		
+		System.out.println("Char will be converted to Int implicitly");
+		System.out.println(charVar1 + charVar2);
 		
 	}
 

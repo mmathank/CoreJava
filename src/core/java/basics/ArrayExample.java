@@ -10,24 +10,29 @@ public class ArrayExample {
 		arrOfNum[0] = 30;
 		arrOfNum[1] = 10;
 		arrOfNum[2] = 20;
+		
+//		Printing array using for loop
+		for (int i = 0; i < arrOfNum.length; i++) {
+			System.out.print(arrOfNum[i] + " ");
+		}
 
 		int[] arrOfNum2;
 		arrOfNum2 = new int[] { 60, 50, 40 };
+		
+//		Printing array using For-Each loop
+		System.out.println();
+		for (int i : arrOfNum2)
+			System.out.print(i + " ");
 
 		int[] arrOfNum3 = { 70, 80, 90 };
+		System.out.println();
+		System.out.println(Arrays.toString(arrOfNum3));
 
-		System.out.println("Array iteration using traditional for loop");
-		for (int i = 0; i < arrOfNum.length; i++) {
-			System.out.println(arrOfNum[i]);
-		}
+		int[] numbers = { 10, 25, 5, 32, 14, 7 };
+		Arrays.sort(numbers);
+		System.out.println(Arrays.toString(numbers));
 
-		System.out.println("Array iteration using enhanced for loop");
-		for (int i : arrOfNum2)
-			System.out.println(i);
-
-		System.out.println("Using toString() method from Arrays class");
-		System.out.println("arrOfNum3: " + Arrays.toString(arrOfNum3));
-
+//		Two-Dimensional Array
 		int[][] twoDimArr = { { 1, 2, 3, 4, 5, 6 }, { 1, 1, 1, 1, 1, 1 }, { 0, 1, 2, 3, 4, 5 }, { 1, 2, 3, 4, 5, 6 },
 				{ 1, 1, 1, 1, 1, 1 }, { 5, 4, 3, 2, 1, 0 } };
 
