@@ -20,8 +20,9 @@ public class StringExample {
 		System.out.println(word.trim());
 		
 		String keyword = "SPRING FRAMEWORK";
-		keyword.toLowerCase();
+		String keywordInLowerCase = keyword.toLowerCase();
 		System.out.println(keyword);
+		System.out.println(keywordInLowerCase);
 		
 		String subject1 = new String("Tamil");
 		String subject2 = new String("Tamil");

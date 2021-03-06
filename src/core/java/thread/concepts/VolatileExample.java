@@ -1,16 +1,17 @@
 package core.java.thread.concepts;
 
 class Runner implements Runnable {
-	
-	boolean flag;
+
+//	volatile usage
+	volatile boolean flag;
 	
 	public void run () {
-		System.out.println("Inside Main Method");
+		System.out.println("Inside Run Method");
 		
 		while (!flag) {
 			try {
-				Thread.sleep(500);
-				System.out.println("Welcome");
+				Thread.sleep(1000);
+				System.out.println("Running..");
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
@@ -31,7 +32,7 @@ public class VolatileExample {
 		Thread t1 = new Thread(r1);
 		t1.start();
 		try {
-			Thread.sleep(1000);
+			Thread.sleep(5000);
 			r1.changeFlag(true);
 			t1.join();
 		} catch (InterruptedException e) {

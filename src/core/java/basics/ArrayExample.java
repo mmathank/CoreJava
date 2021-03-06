@@ -10,6 +10,11 @@ public class ArrayExample {
 		arrOfNum[0] = 30;
 		arrOfNum[1] = 10;
 		arrOfNum[2] = 20;
+//		arrOfNum[3] = 40;
+		System.out.println(arrOfNum.length);
+		System.out.println("0th Element: " + arrOfNum[0]);
+		System.out.println("1st Element: " + arrOfNum[1]);
+		System.out.println("2nd Element: " + arrOfNum[2]);
 		
 //		Printing array using for loop
 		for (int i = 0; i < arrOfNum.length; i++) {
