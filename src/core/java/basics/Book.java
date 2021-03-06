@@ -6,13 +6,11 @@ public class Book {
 	int price;
 	
 	public void showDetails(String bookName) {
-		String result = this.bookName.concat(" " + bookName);
-		System.out.println(result);
+		System.out.println(bookName);
 	}
 	
 	public void showDetails(int price) {
-		int result = price - 10;
-		System.out.println(result);
+		System.out.println(price);
 	}
 	
 	public void showDetails(int price, String bookName) {
@@ -29,7 +27,6 @@ public class Book {
 		
 		b1.showDetails("written by Author X");
 		b1.showDetails(110);
-		
 		b1.showDetails(500, "UpdatedBook");
 	}
 }

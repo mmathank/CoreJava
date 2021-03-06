@@ -26,6 +26,7 @@ public class User {
 		this.name = name;
 
 	}
+	
 	public int getId() {
 		return id;
 	}
@@ -63,11 +64,11 @@ public class User {
 		user1.setAge(5);
 		
 		System.out.println("User1 Name: " + user1.getName());
+		System.out.println(user1);
 		
 		User user2 = new User(2, "Mathankumar", 31);
 		System.out.println("User2 ID: " + user2.getId());
 		
-		System.out.println(user1);
 		System.out.println(user2);
 		
 		User user3 = new User("TestUser");
